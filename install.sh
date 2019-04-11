@@ -7,9 +7,12 @@ config_java(){
 
 echo "开始下载项目"
 
+rm -rf ShortVideoProject.jar
+
 wget https://github.com/GuoJiafeng/ShortVideoProject/releases/download/1.1/ShortVideoProject.jar
 
 echo "项目下载完成"
+
 
 
 
@@ -42,6 +45,8 @@ echo -e "再次启动项目请通过runner.sh 启动项目"
 config_mysql(){
 
 echo "开始下载SQL文件"
+
+rm -rf shortvideo.sql
 
 wget https://github.com/GuoJiafeng/ShortVideoProject/releases/download/1.1/shortvideo.sql
 
@@ -113,7 +118,7 @@ echo
 		echo "开始安装Mysql"
 
 		install_mysql
-			break
+		break
 
 		else
 			error
@@ -149,7 +154,7 @@ install_bc() {
 }
 install_java(){
 
-   
+
   yum install java-1.8.0-openjdk curl -y
 
    config_java
@@ -186,6 +191,10 @@ mysql -f mysql -e "UPDATE user SET Password=PASSWORD('${mysqlpass01}') where USE
 mysql  -e "flush privileges;"
 
 service mysql restart
+
+
+
+config_mysql
 
 }
 
