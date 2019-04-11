@@ -139,14 +139,14 @@ mv CentOS6-Base-163.repo /etc/yum.repos.d/
 yum clean all
 yum makecache
 
-yum install lib*
-yum install -y git redhat-lsb curl gawk tar httpd-devel unzip expect
-yum install wget tar gcc gcc-c++ openssl openssl-devel pcre-devel python-devel libevent automake autoconf libtool make -y
 yum update -y
 
 
 }
 
+install_bc() {
+    command -v bc >/dev/null 2>&1 || yum install bc -y || apt install bc -y
+}
 install_java(){
 
 if [[ -f /usr/bin/java ]]; then
@@ -173,11 +173,12 @@ if [[ -f /usr/bin/java ]]; then
 
 }
 
-install_bc() {
-    command -v bc >/dev/null 2>&1 || yum install bc -y || apt install bc -y
-}
+
 
 install_mysql(){
+
+
+yum remove -y mysql*
 
 wget http://mirrors.sohu.com/mysql/MySQL-5.5/MySQL-client-5.5.61-1.el6.x86_64.rpm
 wget http://mirrors.sohu.com/mysql/MySQL-5.5/MySQL-server-5.5.61-1.el6.x86_64.rpm
