@@ -86,7 +86,7 @@ isJava() {
 
 		echo "开始安装Java"
 		install_java
-			break
+		break
 
 		else
 			error
@@ -148,7 +148,11 @@ install_bc() {
     command -v bc >/dev/null 2>&1 || yum install bc -y || apt install bc -y
 }
 install_java(){
+
+   
   yum install java-1.8.0-openjdk curl -y
+
+   config_java
 
 }
 
@@ -156,8 +160,11 @@ install_java(){
 
 install_mysql(){
 
-
 yum remove -y mysql*
+
+rm -rf MySQL-*
+rpm -e --nodeps MySQL-client-5.5.61-1.el6.x86_64
+rpm -e --nodeps MySQL-server-5.5.61-1.el6.x86_64
 
 wget http://mirrors.sohu.com/mysql/MySQL-5.5/MySQL-client-5.5.61-1.el6.x86_64.rpm
 wget http://mirrors.sohu.com/mysql/MySQL-5.5/MySQL-server-5.5.61-1.el6.x86_64.rpm
