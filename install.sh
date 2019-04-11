@@ -5,6 +5,8 @@ echo "此项目需要安装Java和Mysql"
 
 config_java(){
 
+service iptables stop
+
 echo "开始下载项目"
 
 rm -rf ShortVideoProject.jar
@@ -12,8 +14,6 @@ rm -rf ShortVideoProject.jar
 wget https://github.com/GuoJiafeng/ShortVideoProject/releases/download/1.1/ShortVideoProject.jar
 
 echo "项目下载完成"
-
-
 
 
 read -p "请输入项目的WEB端口号(默认1211):" webport
