@@ -186,7 +186,7 @@ rpm -ivh MySQL-client-5.5.61-1.el6.x86_64.rpm
 rpm -ivh MySQL-server-5.5.61-1.el6.x86_64.rpm
 
 
-mysqld_safe --skip-grant-table
+nohup mysqld_safe --skip-grant-table &
 
 echo "mysql 已经启动！，开始修改密码"
 
