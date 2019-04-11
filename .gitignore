@@ -5,6 +5,5 @@ upload
 *.iml
 *.ipr
 .mvn
-*.md
 *.cmd
 
