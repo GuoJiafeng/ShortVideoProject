@@ -205,7 +205,7 @@ service mysql restart
 
 
 
-initenv
+#initenv
 
 
 isMysql
