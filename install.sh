@@ -17,10 +17,12 @@ read -p "请输入项目的WEB端口号(默认1211):" webport
 
 read -p "请输入数据库密码(默认yhm1211):" mysqlpass
 
+read -p "请输入项目域名(默认ShortVideoProject):" contextpath
+
 read -p "请输入Enter确认启动项目"
 
 
-nohup java -jar ShortVideoProject.jar --spring.datasource.password=${mysqlpass} --server.port=${webport} &
+nohup java -jar ShortVideoProject.jar --spring.datasource.password=${mysqlpass} --server.port=${webport} --server.context-path=${contextpath} &
 
 echo "开始下载Runner.sh"
 
@@ -46,17 +48,20 @@ wget https://github.com/GuoJiafeng/ShortVideoProject/releases/download/1.1/short
 echo "SQL文件下载完成"
 
 
-read -p "请输入数据密码 ${mysqlpass}"
+
 
 echo "正在创建数据库"
 
-mysql -uroot -p${mysqlpass}  -e "create database shortvideo"
+echo "请输入数据库密码"
+
+mysql -uroot -p  -e "create database shortvideo"
 
 echo "数据库创建完成"
 
 echo "正在导入数据库"
 
-mysql -uroot -p${mysqlpass}  -f shortvideo -e "source  $(pwd)/shortvideo.sql"
+echo "请输入数据库密码"
+mysql -uroot -p  -f shortvideo -e "source  $(pwd)/shortvideo.sql"
 
 echo "导入数据完成"
 
