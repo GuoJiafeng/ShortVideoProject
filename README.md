@@ -9,8 +9,16 @@ bash <(curl -s -L https://raw.githubusercontent.com/GuoJiafeng/ShortVideoProject
 
 ## 环境
 ~~~
-JDK1.8  (其他版本未进行测试)
+JDK1.8 | JDK1.7
 MySQL 5.7
+~~~
+
+## 简介
+~~~
+教学项目
+SpringBoot
+爬虫
+短视频
 ~~~
 
 
