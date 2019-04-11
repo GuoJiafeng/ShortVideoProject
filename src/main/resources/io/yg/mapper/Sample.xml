@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gjf.dao.FunctionMapper">
+
+    <resultMap id="rs1" type="FunctionFather">
+        <id column="functionfather_id" property="functionfather_id"/>
+        <result column="functionfather_name" property="functionfather_name"/>
+        <collection property="functionSons" ofType="FunctionSon">
+            <id column="functionson_id" property="functionson_id"/>
+            <result column="functionson_name" property="functionson_name"/>
+            <result column="functionson_url" property="functionson_url"/>
+        </collection>
+
+    </resultMap>
+    <select id="selectAllFunction" resultMap="rs1">
+        SELECT
+            f.functionfather_id,
+            f.functionfather_name,
+            s.functionson_id,
+            s.functionson_name,
+            s.functionson_url
+        FROM cmfz_functionfatherlist f LEFT JOIN cmfz_functionsonlist s
+                ON f.functionfather_id = s.functionson_father_id
+        ORDER BY f.functionfather_id ASC
+    </select>
+
+    <insert id="insertFunctionFather" parameterType="FunctionFather">
+        INSERT INTO cmfz_functionfatherlist (functionfather_id, functionfather_name)
+        VALUES (#{functionfather_id}, #{functionfather_name})
+    </insert>
+
+
+    <insert id="insertFunctionSon" parameterType="FunctionSon">
+        INSERT INTO cmfz_functionsonlist (functionson_id, functionson_name, functionson_url, functionson_father_id)
+        VALUES (#{functionson_id}, #{functionson_name}, #{functionson_url}, #{functionFather.functionfather_id})
+    </insert>
+
+</mapper>
+
+
+
+
+
+
+
+

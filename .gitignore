@@ -1,0 +1,10 @@
+target
+upload
+.idea
+*.iws
+*.iml
+*.ipr
+.mvn
+*.md
+*.cmd
+

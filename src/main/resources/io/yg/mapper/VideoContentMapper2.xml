@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.yg.dao.VideoContentMapper">
+  <resultMap id="BaseResultMap" type="io.yg.entity.VideoContent">
+    <id column="vc_id" jdbcType="VARCHAR" property="vcId"/>
+    <result column="vc_author" jdbcType="VARCHAR" property="vcAuthor"/>
+    <result column="vc_detail" jdbcType="VARCHAR" property="vcDetail"/>
+    <result column="vc_shareurl" jdbcType="VARCHAR" property="vcShareurl"/>
+    <result column="vc_from" jdbcType="VARCHAR" property="vcFrom"/>
+    <result column="vc_type" jdbcType="VARCHAR" property="vcType"/>
+    <result column="vc_createtime" jdbcType="TIMESTAMP" property="vcCreatetime"/>
+    <result column="reserved_field01" jdbcType="VARCHAR" property="reservedField01"/>
+    <result column="reserved_field02" jdbcType="VARCHAR" property="reservedField02"/>
+    <result column="reserved_field03" jdbcType="VARCHAR" property="reservedField03"/>
+    <result column="reserved_field04" jdbcType="VARCHAR" property="reservedField04"/>
+    <result column="reserved_field05" jdbcType="VARCHAR" property="reservedField05"/>
+  </resultMap>
+  <sql id="Base_Column_List">
+    vc_id, vc_author, vc_detail, vc_shareurl, vc_from, vc_type, vc_createtime, reserved_field01,
+    reserved_field02, reserved_field03, reserved_field04, reserved_field05
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from video_content
+    where vc_id = #{vcId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from video_content
+    where vc_id = #{vcId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="io.yg.entity.VideoContent">
+    insert into video_content (vc_id, vc_author, vc_detail,
+      vc_shareurl, vc_from, vc_type,
+      vc_createtime, reserved_field01, reserved_field02,
+      reserved_field03, reserved_field04, reserved_field05
+      )
+    values (#{vcId,jdbcType=VARCHAR}, #{vcAuthor,jdbcType=VARCHAR}, #{vcDetail,jdbcType=VARCHAR},
+      #{vcShareurl,jdbcType=VARCHAR}, #{vcFrom,jdbcType=VARCHAR}, #{vcType,jdbcType=VARCHAR},
+      #{vcCreatetime,jdbcType=TIMESTAMP}, #{reservedField01,jdbcType=VARCHAR}, #{reservedField02,jdbcType=VARCHAR},
+      #{reservedField03,jdbcType=VARCHAR}, #{reservedField04,jdbcType=VARCHAR}, #{reservedField05,jdbcType=VARCHAR}
+      )
+  </insert>
+
+
+  <insert id="insertBatch" parameterType="io.yg.entity.VideoContent">
+
+
+    insert into video_content (vc_id, vc_author, vc_detail,
+    vc_shareurl, vc_from, vc_type,
+    vc_createtime, reserved_field01, reserved_field02,
+    reserved_field03, reserved_field04, reserved_field05
+    )
+    <foreach collection="list" item="video" separator=",">
+      values (#{video.vcId,jdbcType=VARCHAR}, #{video.vcAuthor,jdbcType=VARCHAR}, #{video.vcDetail,jdbcType=VARCHAR},
+      #{video.vcShareurl,jdbcType=VARCHAR}, #{video.vcFrom,jdbcType=VARCHAR}, #{video.vcType,jdbcType=VARCHAR},
+      #{video.vcCreatetime,jdbcType=TIMESTAMP}, #{video.reservedField01,jdbcType=VARCHAR},
+      #{video.reservedField02,jdbcType=VARCHAR},
+      #{video.reservedField03,jdbcType=VARCHAR}, #{video.reservedField04,jdbcType=VARCHAR},
+      #{video.reservedField05,jdbcType=VARCHAR}
+      )
+    </foreach>
+
+
+  </insert>
+
+
+  <insert id="insertSelective" parameterType="io.yg.entity.VideoContent">
+    insert into video_content
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="vcId != null">
+        vc_id,
+      </if>
+      <if test="vcAuthor != null">
+        vc_author,
+      </if>
+      <if test="vcDetail != null">
+        vc_detail,
+      </if>
+      <if test="vcShareurl != null">
+        vc_shareurl,
+      </if>
+      <if test="vcFrom != null">
+        vc_from,
+      </if>
+      <if test="vcType != null">
+        vc_type,
+      </if>
+      <if test="vcCreatetime != null">
+        vc_createtime,
+      </if>
+      <if test="reservedField01 != null">
+        reserved_field01,
+      </if>
+      <if test="reservedField02 != null">
+        reserved_field02,
+      </if>
+      <if test="reservedField03 != null">
+        reserved_field03,
+      </if>
+      <if test="reservedField04 != null">
+        reserved_field04,
+      </if>
+      <if test="reservedField05 != null">
+        reserved_field05,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="vcId != null">
+        #{vcId,jdbcType=VARCHAR},
+      </if>
+      <if test="vcAuthor != null">
+        #{vcAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="vcDetail != null">
+        #{vcDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="vcShareurl != null">
+        #{vcShareurl,jdbcType=VARCHAR},
+      </if>
+      <if test="vcFrom != null">
+        #{vcFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="vcType != null">
+        #{vcType,jdbcType=VARCHAR},
+      </if>
+      <if test="vcCreatetime != null">
+        #{vcCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reservedField01 != null">
+        #{reservedField01,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedField02 != null">
+        #{reservedField02,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedField03 != null">
+        #{reservedField03,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedField04 != null">
+        #{reservedField04,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedField05 != null">
+        #{reservedField05,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="io.yg.entity.VideoContent">
+    update video_content
+    <set>
+      <if test="vcAuthor != null">
+        vc_author = #{vcAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="vcDetail != null">
+        vc_detail = #{vcDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="vcShareurl != null">
+        vc_shareurl = #{vcShareurl,jdbcType=VARCHAR},
+      </if>
+      <if test="vcFrom != null">
+        vc_from = #{vcFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="vcType != null">
+        vc_type = #{vcType,jdbcType=VARCHAR},
+      </if>
+      <if test="vcCreatetime != null">
+        vc_createtime = #{vcCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reservedField01 != null">
+        reserved_field01 = #{reservedField01,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedField02 != null">
+        reserved_field02 = #{reservedField02,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedField03 != null">
+        reserved_field03 = #{reservedField03,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedField04 != null">
+        reserved_field04 = #{reservedField04,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedField05 != null">
+        reserved_field05 = #{reservedField05,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where vc_id = #{vcId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="io.yg.entity.VideoContent">
+    update video_content
+    set vc_author = #{vcAuthor,jdbcType=VARCHAR},
+      vc_detail = #{vcDetail,jdbcType=VARCHAR},
+      vc_shareurl = #{vcShareurl,jdbcType=VARCHAR},
+      vc_from = #{vcFrom,jdbcType=VARCHAR},
+      vc_type = #{vcType,jdbcType=VARCHAR},
+      vc_createtime = #{vcCreatetime,jdbcType=TIMESTAMP},
+      reserved_field01 = #{reservedField01,jdbcType=VARCHAR},
+      reserved_field02 = #{reservedField02,jdbcType=VARCHAR},
+      reserved_field03 = #{reservedField03,jdbcType=VARCHAR},
+      reserved_field04 = #{reservedField04,jdbcType=VARCHAR},
+      reserved_field05 = #{reservedField05,jdbcType=VARCHAR}
+    where vc_id = #{vcId,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="io.yg.entity.VideoContent">
+    <id column="id" jdbcType="VARCHAR" property="id"/>
+    <result column="author" jdbcType="VARCHAR" property="author"/>
+    <result column="detail" jdbcType="VARCHAR" property="detail"/>
+    <result column="shareurl" jdbcType="VARCHAR" property="shareurl"/>
+    <result column="from" jdbcType="VARCHAR" property="from"/>
+    <result column="type" jdbcType="VARCHAR" property="type"/>
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime"/>
+    <result column="reserved_field01" jdbcType="VARCHAR" property="reservedField01"/>
+    <result column="reserved_field02" jdbcType="VARCHAR" property="reservedField02"/>
+    <result column="reserved_field03" jdbcType="VARCHAR" property="reservedField03"/>
+    <result column="reserved_field04" jdbcType="VARCHAR" property="reservedField04"/>
+    <result column="reserved_field05" jdbcType="VARCHAR" property="reservedField05"/>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, author, detail, shareurl, from, type, createtime, reserved_field01, reserved_field02,
+    reserved_field03, reserved_field04, reserved_field05
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from video_content
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from video_content
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="io.yg.entity.VideoContent">
+    insert into video_content (id, author, detail,
+      shareurl, from, type,
+      createtime, reserved_field01, reserved_field02,
+      reserved_field03, reserved_field04, reserved_field05
+      )
+    values (#{id,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR},
+      #{shareurl,jdbcType=VARCHAR}, #{from,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR},
+      #{createtime,jdbcType=TIMESTAMP}, #{reservedField01,jdbcType=VARCHAR}, #{reservedField02,jdbcType=VARCHAR},
+      #{reservedField03,jdbcType=VARCHAR}, #{reservedField04,jdbcType=VARCHAR}, #{reservedField05,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="io.yg.entity.VideoContent">
+    insert into video_content
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="author != null">
+        author,
+      </if>
+      <if test="detail != null">
+        detail,
+      </if>
+      <if test="shareurl != null">
+        shareurl,
+      </if>
+      <if test="from != null">
+        from,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="reservedField01 != null">
+        reserved_field01,
+      </if>
+      <if test="reservedField02 != null">
+        reserved_field02,
+      </if>
+      <if test="reservedField03 != null">
+        reserved_field03,
+      </if>
+      <if test="reservedField04 != null">
+        reserved_field04,
+      </if>
+      <if test="reservedField05 != null">
+        reserved_field05,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="detail != null">
+        #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="shareurl != null">
+        #{shareurl,jdbcType=VARCHAR},
+      </if>
+      <if test="from != null">
+        #{from,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reservedField01 != null">
+        #{reservedField01,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedField02 != null">
+        #{reservedField02,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedField03 != null">
+        #{reservedField03,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedField04 != null">
+        #{reservedField04,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedField05 != null">
+        #{reservedField05,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="io.yg.entity.VideoContent">
+    update video_content
+    <set>
+      <if test="author != null">
+        author = #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="detail != null">
+        detail = #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="shareurl != null">
+        shareurl = #{shareurl,jdbcType=VARCHAR},
+      </if>
+      <if test="from != null">
+        from = #{from,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reservedField01 != null">
+        reserved_field01 = #{reservedField01,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedField02 != null">
+        reserved_field02 = #{reservedField02,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedField03 != null">
+        reserved_field03 = #{reservedField03,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedField04 != null">
+        reserved_field04 = #{reservedField04,jdbcType=VARCHAR},
+      </if>
+      <if test="reservedField05 != null">
+        reserved_field05 = #{reservedField05,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="io.yg.entity.VideoContent">
+    update video_content
+    set author = #{author,jdbcType=VARCHAR},
+      detail = #{detail,jdbcType=VARCHAR},
+      shareurl = #{shareurl,jdbcType=VARCHAR},
+      from = #{from,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      reserved_field01 = #{reservedField01,jdbcType=VARCHAR},
+      reserved_field02 = #{reservedField02,jdbcType=VARCHAR},
+      reserved_field03 = #{reservedField03,jdbcType=VARCHAR},
+      reserved_field04 = #{reservedField04,jdbcType=VARCHAR},
+      reserved_field05 = #{reservedField05,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/shortvideo
+    username: root
+    password: yhm1211.
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+  freemarker:
+    suffix: .html
+    prefix: /
+
+mybatis:
+  mapper-locations: classpath:io/yg/mapper/*Mapper.xml
+  type-aliases-package: io.yg.entity
+
+
+
+server:
+  port: 1211
+  context-path: /ShortVideoProject
+  jsp-servlet:
+    init-parameters:
+      development: true
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+
+
+

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="io.yg.dao.DimUserActiveMapper">
+    <resultMap id="BaseResultMap" type="io.yg.entity.DimUserActive">
+        <result column="fromurl" property="fromurl" jdbcType="VARCHAR"/>
+        <result column="ipaddress" property="ipaddress" jdbcType="VARCHAR"/>
+        <result column="pcsystemnameormobilebrandname" property="pcsystemnameormobilebrandname" jdbcType="VARCHAR"/>
+        <result column="cityname" property="cityname" jdbcType="VARCHAR"/>
+        <result column="count" property="count" jdbcType="INTEGER"/>
+        <result column="day" property="day" jdbcType="VARCHAR"/>
+        <result column="dim" property="dim" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <select id="showUserByDateAndDim" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select
+       *
+
+    from dim_user_active_day
+    where day = #{day,jdbcType=VARCHAR} and dim =  #{dim,jdbcType=VARCHAR}
+  </select>
+
+    <insert id="insert" parameterType="io.yg.entity.DimUserActive">
+    insert into dim_user_active_day (fromurl, ipaddress, pcsystemnameormobilebrandname, 
+      cityname, count, day, 
+      dim)
+    values (#{fromurl,jdbcType=VARCHAR}, #{ipaddress,jdbcType=VARCHAR}, #{pcsystemnameormobilebrandname,jdbcType=VARCHAR}, 
+      #{cityname,jdbcType=VARCHAR}, #{count,jdbcType=INTEGER}, #{day,jdbcType=VARCHAR}, 
+      #{dim,jdbcType=VARCHAR})
+  </insert>
+
+
+    <insert id="insertSelective" parameterType="io.yg.entity.DimUserActive">
+        insert into dim_user_active_day
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="fromurl != null">
+                fromurl,
+            </if>
+            <if test="ipaddress != null">
+                ipaddress,
+            </if>
+            <if test="pcsystemnameormobilebrandname != null">
+                pcsystemnameormobilebrandname,
+            </if>
+            <if test="cityname != null">
+                cityname,
+            </if>
+            <if test="count != null">
+                count,
+            </if>
+            <if test="day != null">
+                day,
+            </if>
+            <if test="dim != null">
+                dim,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="fromurl != null">
+                #{fromurl,jdbcType=VARCHAR},
+            </if>
+            <if test="ipaddress != null">
+                #{ipaddress,jdbcType=VARCHAR},
+            </if>
+            <if test="pcsystemnameormobilebrandname != null">
+                #{pcsystemnameormobilebrandname,jdbcType=VARCHAR},
+            </if>
+            <if test="cityname != null">
+                #{cityname,jdbcType=VARCHAR},
+            </if>
+            <if test="count != null">
+                #{count,jdbcType=INTEGER},
+            </if>
+            <if test="day != null">
+                #{day,jdbcType=VARCHAR},
+            </if>
+            <if test="dim != null">
+                #{dim,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+</mapper>
