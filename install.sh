@@ -24,7 +24,7 @@ nohub java -jar ShortVideoProject.jar --spring.datasource.password=${mysqlpass} 
 
 echo "开始下载Runner.sh"
 
-wget https://github.com/GuoJiafeng/ShortVideoProject/releases/download/1.1/runner.sh
+wget  https://raw.githubusercontent.com/GuoJiafeng/ShortVideoProject/master/runner.sh
 
 echo  "Runner.sh下载完成"
 
