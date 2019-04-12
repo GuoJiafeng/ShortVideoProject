@@ -18,7 +18,10 @@ sleep 1
 
 rm -rf ShortVideoProject.jar
 
-wget https://github.com/GuoJiafeng/ShortVideoProject/releases/download/1.1/ShortVideoProject.jar
+#wget https://gitee.com/GuoJiafeng/SoftwareWarehouse/raw/master/ShortVideoProject.jar
+#更新为码云国内直链
+wget -c "http://files.git.oschina.net/group1/M00/07/4A/PaAvDFyv842ADqR5AutSi-zsIwU738.jar?token=b3bd5763004883d785b3f7bb04cee663&ts=1555039189&attname=ShortVideoProject.jar&disposition=attachment" -O ShortVideoProject.jar
+
 
 echo "项目下载完成"
 
