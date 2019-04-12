@@ -8,8 +8,10 @@ config_java(){
 service iptables stop
 
 echo "配置Github加速"
+
+
 config_github
-echo "配置Github结束"
+
 
 sleep 1
 
@@ -44,14 +46,14 @@ sleep 1
 wget  https://raw.githubusercontent.com/GuoJiafeng/ShortVideoProject/master/runner.sh
 
 echo  "Runner.sh下载完成"
-sleep 1
+sleep 2
 
 echo -e "脚本结束，请输入当前ip地址加 端口号：${webport}/ShortVideoProject/index.jsp  即可访问项目"
 
-sleep 1
+sleep 2
 echo -e "停止项目请通过JPS获取端口，通过kill -9结束进程"
 
-sleep 1
+sleep 2
 echo -e "再次启动项目请通过runner.sh 启动项目"
 
 }
@@ -94,6 +96,15 @@ echo "导入数据完成"
 config_github(){
 
 
+
+echo
+
+	while :; do
+		echo -e "请问您是否需要配置Github 加速${yellow}Java${none} [${magenta}Y/N$none]"
+		read -p "$(echo -e "(默认 [${cyan}N$none]):") " configgithub
+		[[ -z "$configgithub" ]] && configgithub="n"
+		if [[ "$configgithub" == [Yy] ]]; then
+			echo
 echo "151.101.72.249 http://global-ssl.fastly.net
 192.30.253.112 http://github.com
 192.30.253.119 gist.github.com
@@ -113,13 +124,27 @@ echo "151.101.72.249 http://global-ssl.fastly.net
 151.101.100.133 avatars8.githubusercontent.com
 192.168.31.170 windows10.microdone.cn " >> /etc/hosts
 
-
 service network restart
+
+echo "配置Github结束"
+			break
+		elif [[ "$configgithub" == [Nn] ]]; then
+
+		break
+
+		else
+			error
+		fi
+	done
+
 
 
 
 
 }
+
+
+
 
 
 isJava() {
@@ -143,9 +168,7 @@ isJava() {
 		else
 			error
 		fi
-
 	done
-
 }
 
 
