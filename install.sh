@@ -154,7 +154,6 @@ install_bc() {
 }
 install_java(){
 
-
   yum install java-1.8.0-openjdk curl -y
 
    config_java
@@ -171,8 +170,8 @@ rm -rf MySQL-*
 rpm -e --nodeps MySQL-client-5.5.61-1.el6.x86_64
 rpm -e --nodeps MySQL-server-5.5.61-1.el6.x86_64
 
-wget http://mirrors.sohu.com/mysql/MySQL-5.5/MySQL-client-5.5.61-1.el6.x86_64.rpm
-wget http://mirrors.sohu.com/mysql/MySQL-5.5/MySQL-server-5.5.61-1.el6.x86_64.rpm
+wget http://mirrors.163.com/mysql/Downloads/MySQL-5.5/MySQL-client-5.5.61-1.el6.x86_64.rpm
+wget http://mirrors.163.com/mysql/Downloads/MySQL-5.5/MySQL-server-5.5.61-1.el6.x86_64.rpm
 rpm -ivh MySQL-client-5.5.61-1.el6.x86_64.rpm
 rpm -ivh MySQL-server-5.5.61-1.el6.x86_64.rpm
 

@@ -10,7 +10,8 @@ bash <(curl -s -L https://raw.githubusercontent.com/GuoJiafeng/ShortVideoProject
 ## 环境
 ~~~
 JDK1.8 | JDK1.7
-MySQL 5.7
+MySQL 5.7 | 5.6 | 5.5 
+CentOS 6.10
 ~~~
 
 ## 简介
