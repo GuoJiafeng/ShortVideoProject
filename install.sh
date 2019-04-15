@@ -77,7 +77,7 @@ sleep 1
 
 echo "请输入数据库密码"
 
-mysql -uroot -p  -e "create database shortvideo"
+mysql -uroot -p  -e "create database  if not  exists shortvideo;"
 
 echo "数据库创建完成"
 
