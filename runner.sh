@@ -26,5 +26,4 @@ echo -e "再次启动项目请通过runner.sh 启动项目"
 
 }
 
-
 config_java
