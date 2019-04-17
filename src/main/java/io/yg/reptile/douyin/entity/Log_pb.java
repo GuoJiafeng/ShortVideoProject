@@ -1,10 +1,10 @@
 /**
-  * Copyright 2018 bejson.com 
+  * Copyright 2019 bejson.com 
   */
 package io.yg.reptile.douyin.entity;
 
 /**
- * Auto-generated: 2018-07-31 14:19:29
+ * Auto-generated: 2019-04-17 17:35:6
  *
  * @author bejson.com (i@bejson.com)
  * @website http://www.bejson.com/java2pojo/

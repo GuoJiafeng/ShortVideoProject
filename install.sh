@@ -264,7 +264,6 @@ mysql  -e "flush privileges;"
 service mysql restart
 
 
-
 config_mysql
 
 }

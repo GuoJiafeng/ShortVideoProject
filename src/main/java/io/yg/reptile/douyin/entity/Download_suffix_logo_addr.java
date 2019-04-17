@@ -5,12 +5,12 @@ package io.yg.reptile.douyin.entity;
 import java.util.List;
 
 /**
- * Auto-generated: 2019-04-17 17:35:6
+ * Auto-generated: 2019-04-17 17:20:49
  *
  * @author bejson.com (i@bejson.com)
  * @website http://www.bejson.com/java2pojo/
  */
-public class Cover_thumb {
+public class Download_suffix_logo_addr {
 
     private String uri;
     private List<String> url_list;

@@ -10,12 +10,13 @@ import java.util.List;
  * @author bejson.com (i@bejson.com)
  * @website http://www.bejson.com/java2pojo/
  */
-public class Cover_thumb {
+public class Play_addr_h264 {
 
     private String uri;
     private List<String> url_list;
     private int width;
     private int height;
+    private String url_key;
     public void setUri(String uri) {
          this.uri = uri;
      }
@@ -42,6 +43,13 @@ public class Cover_thumb {
      }
      public int getHeight() {
          return height;
+     }
+
+    public void setUrl_key(String url_key) {
+         this.url_key = url_key;
+     }
+     public String getUrl_key() {
+         return url_key;
      }
 
 }

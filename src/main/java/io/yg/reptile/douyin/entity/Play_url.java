@@ -1,19 +1,28 @@
 /**
-  * Copyright 2018 bejson.com 
+  * Copyright 2019 bejson.com 
   */
 package io.yg.reptile.douyin.entity;
 import java.util.List;
 
 /**
- * Auto-generated: 2018-07-31 14:19:29
+ * Auto-generated: 2019-04-17 17:35:6
  *
  * @author bejson.com (i@bejson.com)
  * @website http://www.bejson.com/java2pojo/
  */
 public class Play_url {
 
-    private List<String> url_list;
     private String uri;
+    private List<String> url_list;
+    private int width;
+    private int height;
+    public void setUri(String uri) {
+         this.uri = uri;
+     }
+     public String getUri() {
+         return uri;
+     }
+
     public void setUrl_list(List<String> url_list) {
          this.url_list = url_list;
      }
@@ -21,11 +30,18 @@ public class Play_url {
          return url_list;
      }
 
-    public void setUri(String uri) {
-         this.uri = uri;
+    public void setWidth(int width) {
+         this.width = width;
      }
-     public String getUri() {
-         return uri;
+     public int getWidth() {
+         return width;
+     }
+
+    public void setHeight(int height) {
+         this.height = height;
+     }
+     public int getHeight() {
+         return height;
      }
 
 }

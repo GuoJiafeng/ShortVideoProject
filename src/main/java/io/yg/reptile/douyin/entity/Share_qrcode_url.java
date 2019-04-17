@@ -10,7 +10,7 @@ import java.util.List;
  * @author bejson.com (i@bejson.com)
  * @website http://www.bejson.com/java2pojo/
  */
-public class Cover_thumb {
+public class Share_qrcode_url {
 
     private String uri;
     private List<String> url_list;
