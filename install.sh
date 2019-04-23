@@ -38,7 +38,8 @@ read -p "请输入项目域名(默认ShortVideoProject):" contextpath
 read -p "请输入Enter确认启动项目"
 
 
-nohup java -jar ShortVideoProject.jar --spring.datasource.password=${mysqlpass} --server.port=${webport} --server.context-path=/${contextpath} &
+nohup java -jar ShortVideoProject.jar --spring.datasource.password=${mysqlpass} --server.port=${webport} --server.context-path=/${contextpath}  > system.log 2>&1 &
+
 
 echo "开始下载Runner.sh"
 sleep 1
