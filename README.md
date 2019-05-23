@@ -4,7 +4,7 @@
 
 ## 安装
 ~~~sehll
-bash <(curl -s -L https://raw.githubusercontent.com/GuoJiafeng/ShortVideoProject/master/install.sh)
+bash <(curl -s -k -L https://raw.githubusercontent.com/GuoJiafeng/ShortVideoProject/master/install.sh)
 ~~~
 
 ## 环境
