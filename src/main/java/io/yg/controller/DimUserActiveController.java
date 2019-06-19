@@ -16,7 +16,6 @@ public class DimUserActiveController {
 
     @Autowired
 
-
     private DimUserActiveService dimUserActiveService;
 
     @RequestMapping("showUser")

@@ -27,7 +27,7 @@ public class DownFromDetailUrl {
             Document document = response.parse();
             String ss[] = document.html().split("playAddr: \"");
             String ss2[] = ss[1].split("\",");
-            //System.out.println(ss2[0]);
+            System.out.println(ss2[0]);
             // 得到url
             // https://aweme.snssdk.com/aweme/v1/playwm/?video_id=380e29ed5af54d22896d933c81980c31&line=0
 
