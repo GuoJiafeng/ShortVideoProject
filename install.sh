@@ -49,7 +49,7 @@ wget  https://raw.githubusercontent.com/GuoJiafeng/ShortVideoProject/master/runn
 echo  "Runner.sh下载完成"
 sleep 2
 
-echo -e "脚本结束，请输入当前ip地址加 端口号：${webport}/ShortVideoProject/index.jsp  即可访问项目"
+echo -e "脚本结束，请输入当前ip地址加 端口号：${webport}/${contextpath}/index.jsp  即可访问项目"
 
 sleep 2
 echo -e "停止项目请通过JPS获取端口，通过kill -9结束进程"
