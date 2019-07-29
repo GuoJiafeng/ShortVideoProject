@@ -21,8 +21,8 @@ sleep 1
 rm -rf ShortVideoProject.jar
 
 #wget https://gitee.com/GuoJiafeng/SoftwareWarehouse/raw/master/ShortVideoProject.jar
-#更新为码云国内直链
-wget -c "http://files.git.oschina.net/group1/M00/07/4A/PaAvDFyv842ADqR5AutSi-zsIwU738.jar?token=b3bd5763004883d785b3f7bb04cee663&ts=1555039189&attname=ShortVideoProject.jar&disposition=attachment" -O ShortVideoProject.jar
+#更新为七牛云国内直链
+wget -c "http://pu3lqyo3b.bkt.clouddn.com/ShortVideoProject.jar" -O ShortVideoProject.jar
 
 
 echo "项目下载完成"
@@ -31,7 +31,7 @@ sleep 1
 
 read -p "请输入项目的WEB端口号(默认1211):" webport
 
-read -p "请输入数据库密码(默认yhm1211):" mysqlpass
+read -p "请输入数据库密码(默认root):" mysqlpass
 
 read -p "请输入项目域名(默认ShortVideoProject):" contextpath
 
@@ -49,7 +49,7 @@ wget  --no-check-certificate  https://raw.githubusercontent.com/GuoJiafeng/Short
 echo  "Runner.sh下载完成"
 sleep 2
 
-echo -e "脚本结束，请输入当前ip地址加 端口号：${webport}/ShortVideoProject/index.jsp  即可访问项目"
+echo -e "脚本结束，请输入当前ip地址加 端口号：${webport}/${contextpath}/index.jsp  即可访问项目"
 
 sleep 2
 echo -e "停止项目请通过JPS获取端口，通过kill -9结束进程"

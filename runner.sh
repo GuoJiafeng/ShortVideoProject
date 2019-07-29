@@ -6,7 +6,7 @@ config_java(){
 
 read -p "请输入项目的WEB端口号(默认1211):" webport
 
-read -p "请输入数据库密码(默认yhm1211):" mysqlpass
+read -p "请输入数据库密码(默认root):" mysqlpass
 
 read -p "请输入项目域名(默认ShortVideoProject):" contextpath
 
