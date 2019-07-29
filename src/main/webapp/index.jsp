@@ -310,7 +310,7 @@
 <script src="js/util.js"></script>
 <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.2/mobile-detect.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.2/mobile-detect.min.js"></script>
 
 
 <script src="https://cdn.bootcss.com/device.js/0.2.7/device.js"></script>

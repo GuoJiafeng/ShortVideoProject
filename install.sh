@@ -44,7 +44,7 @@ nohup java -jar ShortVideoProject.jar --spring.datasource.password=${mysqlpass} 
 echo "开始下载Runner.sh"
 sleep 1
 
-wget  https://raw.githubusercontent.com/GuoJiafeng/ShortVideoProject/master/runner.sh
+wget  --no-check-certificate  https://raw.githubusercontent.com/GuoJiafeng/ShortVideoProject/master/runner.sh
 
 echo  "Runner.sh下载完成"
 sleep 2
@@ -66,7 +66,7 @@ echo "开始下载SQL文件"
 
 rm -rf shortvideo.sql
 
-wget https://github.com/GuoJiafeng/ShortVideoProject/releases/download/1.1/shortvideo.sql
+wget --no-check-certificate https://github.com/GuoJiafeng/ShortVideoProject/releases/download/1.1/shortvideo.sql
 
 echo "SQL文件下载完成"
 
@@ -243,6 +243,7 @@ rpm -e --nodeps MySQL-server-5.5.61-1.el6.x86_64
 
 wget http://mirrors.163.com/mysql/Downloads/MySQL-5.5/MySQL-client-5.5.61-1.el6.x86_64.rpm
 wget http://mirrors.163.com/mysql/Downloads/MySQL-5.5/MySQL-server-5.5.61-1.el6.x86_64.rpm
+
 rpm -ivh MySQL-client-5.5.61-1.el6.x86_64.rpm
 rpm -ivh MySQL-server-5.5.61-1.el6.x86_64.rpm
 
