@@ -6,6 +6,15 @@
 ~~~sehll
 bash <(curl -s -k -L https://raw.githubusercontent.com/GuoJiafeng/ShortVideoProject/master/install.sh)
 ~~~
+## 导入数据库
+~~~
+bash <(curl -s -k -L https://raw.githubusercontent.com/GuoJiafeng/ShortVideoProject/master/importdb.sh)
+~~~
+
+## 运行项目
+~~~
+bash <(curl -s -k -L https://raw.githubusercontent.com/GuoJiafeng/ShortVideoProject/master/runner.sh)
+~~~
 
 ## 环境
 ~~~
