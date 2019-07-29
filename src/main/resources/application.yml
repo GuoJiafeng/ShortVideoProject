@@ -4,7 +4,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/shortvideo
     username: root
-    password: root
+    password: 1211
   mvc:
     view:
       prefix: /

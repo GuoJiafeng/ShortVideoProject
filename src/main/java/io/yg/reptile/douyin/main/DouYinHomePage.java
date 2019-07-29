@@ -20,22 +20,20 @@ public class DouYinHomePage {
 
 
         List<VideoContent> videoContents = new ArrayList<VideoContent>();
-        //获取主页
+        //获取主页 SET NAMES utf8mb4
         String url = urltext;
         Connection connection = Jsoup.connect(url);
 
 
-        String herder = "Host: aweme-eagle.snssdk.com\n" +
+        String herder = "Host: aweme-eagle-hl.snssdk.com\n" +
                 "Connection: keep-alive\n" +
-                "Cookie: install_id=69542852213; ttreq=1$3d37ae59e82eafc219e21f2d732576fefa8f0573; qh[360]=1; odin_tt=748299982ce5369e352ece6ca8248fa51aaf7ab176c26c9f813fa69efe733f55d852bba5f11827fe58b8b77858001474fe2d8dfc8a582f7d2da33c6a354273cb; sid_guard=d4c24a210ace32e06afc0b4d10ad5380%7C1555494883%7C5184000%7CSun%2C+16-Jun-2019+09%3A54%3A43+GMT; uid_tt=0f4de7ce16b64c1c955de357a7c5708a; sid_tt=d4c24a210ace32e06afc0b4d10ad5380; sessionid=d4c24a210ace32e06afc0b4d10ad5380\n" +
+                "Cookie: install_id=80752569783; ttreq=1$1b76a6804c132985a4865de6f133815305600275; odin_tt=3d8611d091f47177327b4da5306dd88077de12a2eda0859fa1b3a42ab60d959be2a003cb8687606aca7e641e998c8015; qh[360]=1\n" +
                 "Accept-Encoding: gzip\n" +
-                "X-SS-REQ-TICKET: 1555495243971\n" +
-                "X-Tt-Token: 00d4c24a210ace32e06afc0b4d10ad538040e264baf4d9306b5b3002453d29459cc02db14ecb84562ae76f31b6d1ee11182c\n" +
+                "X-SS-REQ-TICKET: 1564410566980\n" +
                 "sdk-version: 1\n" +
-                "User-Agent: com.ss.android.ugc.aweme/590 (Linux; U; Android 5.1.1; zh_CN; HUAWEI MLA-AL10; Build/HUAWEIMLA-AL10; Cronet/58.0.2991.0)\n" +
-                "X-Gorgon: 0300000044001a32c6c1e8307a269d40c65886c04586e7fa616d\n" +
-                "X-Khronos: 1555495244\n" +
-                "X-Pods: \n";
+                "User-Agent: com.ss.android.ugc.aweme/730 (Linux; U; Android 5.1.1; zh_CN; OPPO R11; Build/NMF26X; Cronet/58.0.2991.0)\n" +
+                "X-Gorgon: 03000000400153c981a6b68de0c1af9eeb90f701e76ff17dba70\n" +
+                "X-Khronos: 1564410567";
 
 
         for (String s : herder.split("\n")) {

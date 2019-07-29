@@ -31,8 +31,13 @@ public class VideoServiceImpl implements VideoService {
             List<VideoContent> videoContentList = DouYinHomePage.run(url);
             System.out.println(videoContentList.size());
 
+            for (VideoContent videoContent : videoContentList) {
+
+                System.out.println(videoContent);
+            }
 
             videoContentMapper.insertBatch(videoContentList);
+
 
         } catch (Exception e) {
             e.printStackTrace();
